@@ -33,3 +33,16 @@ Após publicar, cadastrar `https://rpgpinturas.com.br/sitemap.xml` no Google Sea
 A página `/orcamento/` agora sempre abre com um orçamento novo e em branco.
 Nenhum orçamento anterior é carregado automaticamente e nenhum dado de orçamento é armazenado no navegador.
 O botão "Carregar exemplo" permanece apenas como referência opcional.
+
+
+## Cálculo automático do orçamento
+- Cada serviço com valor informado entra automaticamente no valor total.
+- Itens marcados como "Incluso" não somam novamente ao total.
+- O saldo final é calculado automaticamente como: Total dos serviços - Entrada.
+- Ao alterar o valor de qualquer serviço, adicionar/remover item ou informar a entrada, o saldo é atualizado na hora.
+- O campo "Saldo final" fica somente para leitura para evitar divergências.
+
+
+## Ajuste de nomenclatura
+O campo anteriormente chamado "Entrada para materiais" passou a ser exibido apenas como "Entrada".
+Caso seja necessário indicar a finalidade da entrada, essa informação pode ser registrada no campo de observações.
