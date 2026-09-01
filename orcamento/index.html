@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#111317" />
+  <title>Gerador de Orçamento | RPG Pinturas & Gesso</title>
+  <style>
+    :root{--ink:#1e2126;--muted:#686d75;--line:#d9dde2;--soft:#f4f5f7;--red:#c82026;--red2:#a9161b;--paper:#fff;--bg:#eef0f3;--ok:#197542}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+    button,input,textarea,select{font:inherit}input,select,textarea{font-size:16px}.app{width:min(1450px,calc(100% - 28px));margin:22px auto 48px;display:grid;grid-template-columns:minmax(360px,500px) minmax(620px,1fr);gap:22px;align-items:start}
+    .panel,.paper{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px rgba(24,28,33,.08)}
+    .panel{padding:22px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}.panel h1{font-size:22px;margin:0}.panel .subtitle{color:var(--muted);font-size:13px;margin:6px 0 18px}.section-title{font-weight:800;font-size:13px;margin:20px 0 9px;padding-bottom:7px;border-bottom:2px solid var(--ink)}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.field{display:grid;gap:5px}.field label{font-size:12px;font-weight:800;color:#3d4248}.field input,.field textarea,.field select{width:100%;border:1px solid #cfd4da;border-radius:9px;padding:10px 11px;background:#fff;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:#8b9199;box-shadow:0 0 0 3px rgba(50,55,60,.08)}textarea{resize:vertical;min-height:72px}
+    .service-editor{display:grid;gap:9px}.service-row{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fafbfc}.service-top{display:grid;grid-template-columns:1fr 82px 100px 34px;gap:7px;align-items:end}.service-desc{margin-top:7px}.icon-btn{border:0;background:#fbe9ea;color:#9f151a;width:34px;height:38px;border-radius:8px;font-weight:900;cursor:pointer}.add-btn{margin-top:8px;border:1px dashed #9ba0a6;background:#fff;border-radius:9px;padding:12px;width:100%;min-height:46px;cursor:pointer;font-weight:800}.quick-service{display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:10px}.quick-service .btn{min-height:46px}.check{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:12px;color:#444}.check input{margin-top:2px}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.btn{border:0;border-radius:10px;padding:12px 14px;min-height:46px;font-weight:800;cursor:pointer}.btn-primary{background:var(--red);color:#fff}.btn-secondary{background:#22262b;color:#fff}.btn-light{background:#eef0f2;color:#222}.btn:hover{filter:brightness(.96)}.status{font-size:12px;color:var(--ok);font-weight:700;margin-top:8px;min-height:16px}
+    .paper-wrap{min-width:0}.paper-actions{display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px;flex-wrap:wrap}.paper{width:210mm;min-height:297mm;margin:auto;padding:11mm 12mm 9mm;background:var(--paper);border-radius:4px;box-shadow:0 12px 38px rgba(24,28,33,.12);overflow:hidden}
+    .quote-header{display:grid;grid-template-columns:42mm 1fr;gap:7mm;align-items:center}.quote-logo{width:36mm;height:36mm;object-fit:contain}.quote-title{font-size:20px;font-weight:900;letter-spacing:-.3px}.quote-company{font-size:12px;color:var(--muted);line-height:1.45;margin-top:4px}.quote-company b{color:var(--ink)}
+    .meta{width:100%;border-collapse:collapse;margin-top:7mm;font-size:11px}.meta td{border:1px solid var(--line);padding:7px}.meta .label{font-weight:800;background:#f7f7f8;width:21%}
+    .bar{background:var(--red);color:#fff;font-weight:900;font-size:11px;letter-spacing:.15px;padding:5px 7px;margin:6mm 0 2mm}.services{width:100%;border-collapse:collapse;font-size:10.5px}.services th{background:#26292d;color:#fff;padding:7px 5px;text-align:left}.services td{border:1px solid var(--line);padding:7px 5px;vertical-align:top}.services td:nth-child(1),.services th:nth-child(1){width:8%;text-align:center}.services td:nth-child(3),.services th:nth-child(3){width:16%;text-align:center}.services td:nth-child(4),.services th:nth-child(4){width:20%;text-align:center}.service-name{font-weight:800}.service-note{color:#50555c;margin-top:2px;line-height:1.35}.total-box{display:grid;grid-template-columns:1fr auto;align-items:center;margin-top:3mm;border:1.5px solid var(--red);background:#fff6f6;padding:9px 11px}.total-label{font-size:11px;font-weight:900}.total-value{font-size:19px;font-weight:900;color:var(--red)}
+    .conditions{width:100%;border-collapse:collapse;font-size:10.5px}.conditions td{border:1px solid var(--line);padding:6px}.conditions td:first-child{font-weight:800;background:#f5f5f6;width:40%}.notice{border:1px solid #e4d5c0;background:#fff9f1;padding:8px 10px;font-size:10.5px;line-height:1.45}.notice p{margin:0 0 5px}.notice p:last-child{margin:0}.accept{font-size:10.5px;line-height:1.45}.signatures{display:grid;grid-template-columns:1fr 1fr;gap:20mm;margin-top:12mm;text-align:center;font-size:9.5px;color:#555}.sig-line{border-top:1px solid #555;padding-top:4px}.quote-footer{text-align:center;color:#70747a;font-size:9px;margin-top:7mm}
+    .empty{color:#888}.money{text-align:right}.helper{font-size:11px;color:#737880;margin-top:5px;line-height:1.35}.danger{color:#a9161b}
+    @media(max-width:1150px){.app{grid-template-columns:1fr}.panel{position:static;max-height:none}.paper-wrap{overflow:auto}.paper{margin-left:auto;margin-right:auto}}
+    @media(max-width:620px){
+      body{padding-bottom:78px}.app{width:min(100% - 12px,1450px);margin:6px auto 18px;gap:12px}.panel{padding:14px;border-radius:12px}.panel h1{font-size:20px}.panel .subtitle{margin-bottom:12px}
+      .grid2,.grid3{grid-template-columns:1fr}.field input,.field textarea,.field select{min-height:46px;padding:11px 12px}.service-top{grid-template-columns:1fr 1fr}.service-top .field:first-child{grid-column:1/-1}.service-top .remove-wrap{grid-column:2;text-align:right}.icon-btn{min-width:46px;min-height:46px}.actions{grid-template-columns:1fr}.quick-service{grid-template-columns:1fr}
+      .paper-actions{justify-content:stretch}.paper-actions .btn{flex:1}.paper-wrap{border-radius:12px;overflow:visible}.paper{width:100%;min-height:0;margin:0;padding:16px 12px;border-radius:12px;box-shadow:none}.quote-header{grid-template-columns:72px 1fr;gap:10px}.quote-logo{width:66px;height:66px}.quote-title{font-size:15px}.quote-company{font-size:9px}.meta{font-size:9px;margin-top:14px}.meta td{padding:5px}.bar{margin:14px 0 6px}.services{font-size:8.5px}.services th,.services td{padding:5px 3px}.total-box{padding:7px}.total-value{font-size:15px}.conditions,.notice,.accept{font-size:9px}.signatures{gap:18px;margin-top:24px}
+      .mobile-dock{display:grid!important;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:9px 10px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);z-index:50;box-shadow:0 -8px 20px rgba(0,0,0,.08)}.mobile-dock .btn{min-height:50px}
+    }
+    .mobile-dock{display:none}
+    @page{size:A4;margin:0}
+    @media print{
+      body{background:#fff}.app{display:block;width:auto;margin:0}.panel,.paper-actions,.mobile-dock{display:none!important}.paper-wrap{overflow:visible}.paper{box-shadow:none;border:0;border-radius:0;width:210mm;min-height:297mm;margin:0;padding:11mm 12mm 9mm;page-break-after:avoid}.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}.services th,.total-box,.notice,.meta .label,.conditions td:first-child{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+  </style>
+</head>
+<body>
+  <main class="app" id="quoteApp">
+    <section class="panel" aria-label="Preenchimento do orçamento">
+      <h1>Gerador de Orçamento</h1>
+      <p class="subtitle">Área interna da RPG. Preencha, confira a prévia e salve como PDF.</p>
+
+      <div class="section-title">Identificação</div>
+      <div class="grid2">
+        <div class="field"><label for="proposal">Nº da proposta</label><input id="proposal" type="text"></div>
+        <div class="field"><label for="date">Data</label><input id="date" type="date"></div>
+        <div class="field"><label for="validity">Validade (dias)</label><input id="validity" type="number" min="1" value="30"></div>
+        <div class="field"><label for="deadline">Prazo de execução</label><input id="deadline" type="text" value="A combinar"></div>
+      </div>
+
+      <div class="section-title">Cliente e obra</div>
+      <div class="field"><label for="client">Cliente</label><input id="client" type="text" placeholder="Nome do cliente"></div>
+      <div class="field" style="margin-top:8px"><label for="location">Endereço / local da obra</label><input id="location" type="text" placeholder="Endereço da obra"></div>
+
+      <div class="section-title">Serviços</div>
+      <div class="quick-service">
+        <div class="field">
+          <label for="servicePreset">Adicionar serviço rápido</label>
+          <select id="servicePreset">
+            <option value="">Selecione um serviço</option>
+            <option>Pintura residencial</option>
+            <option>Pintura comercial</option>
+            <option>Pintura interna</option>
+            <option>Pintura externa</option>
+            <option>Instalação de forro em Drywall</option>
+            <option>Divisória em Drywall</option>
+            <option>Forro de gesso</option>
+            <option>Sanca de gesso</option>
+            <option>Textura</option>
+            <option>Grafiato</option>
+            <option>Preparação / massa corrida</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-light" id="addPreset">Adicionar</button>
+      </div>
+      <div id="serviceEditor" class="service-editor"></div>
+      <button type="button" class="add-btn" id="addService">+ Adicionar serviço</button>
+      <p class="helper">Use o valor total do item. Para itens já incluídos no preço, deixe valor zero e marque “Incluso”.</p>
+
+      <div class="section-title">Condições de pagamento</div>
+      <div class="grid2">
+        <div class="field"><label for="entry">Entrada (R$)</label><input id="entry" type="number" inputmode="decimal" step="0.01" min="0" value="1900"></div>
+        <div class="field"><label for="balance">Saldo final (R$)</label><input id="balance" type="number" inputmode="decimal" step="0.01" min="0" value="2000"></div>
+      </div>
+      <p class="helper">O valor total é calculado pela soma da entrada + saldo final. Os valores dos itens podem ser informativos.</p>
+
+      <div class="section-title">Observações</div>
+      <label class="check"><input id="clientMaterials" type="checkbox" checked><span>Destacar que <b>massa corrida e tinta são de responsabilidade do cliente</b>.</span></label>
+      <div class="field" style="margin-top:8px"><label for="extraNotes">Observação adicional</label><textarea id="extraNotes" placeholder="Opcional"></textarea></div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="generate">Atualizar orçamento</button>
+        <button type="button" class="btn btn-secondary" id="printBtn">Gerar / Salvar PDF</button>
+        <button type="button" class="btn btn-light" id="newQuote">Novo orçamento</button>
+        <button type="button" class="btn btn-light" id="fillExample">Carregar exemplo</button>
+        <button type="button" class="btn btn-light" id="shareBtn">Compartilhar resumo</button>
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+    </section>
+
+    <section class="paper-wrap" aria-label="Prévia do orçamento">
+      <div class="paper-actions">
+        <button type="button" class="btn btn-primary" id="printTop">Gerar / Salvar PDF</button>
+      </div>
+      <article class="paper" id="paper">
+        <header class="quote-header">
+          <img src="logo-rpg.png" class="quote-logo" alt="Logo RPG Pinturas & Gesso">
+          <div>
+            <div class="quote-title">PROPOSTA COMERCIAL / ORÇAMENTO</div>
+            <div class="quote-company"><b>RPG Pinturas &amp; Gesso</b><br>Pintura • Gesso • Drywall • Texturas • Acabamentos<br><b>WhatsApp:</b> (11) 93024-8160 &nbsp; <b>Site:</b> rpgpinturas.com.br<br><b>Atendimento:</b> Jandira e região - SP</div>
+          </div>
+        </header>
+
+        <table class="meta">
+          <tr><td class="label">Nº da proposta</td><td id="pProposal"></td><td class="label">Data</td><td id="pDate"></td></tr>
+          <tr><td class="label">Cliente</td><td id="pClient"></td><td class="label">Validade</td><td id="pValidity"></td></tr>
+          <tr><td class="label">Local da obra</td><td colspan="3" id="pLocation"></td></tr>
+        </table>
+
+        <div class="bar">ESCOPO DOS SERVIÇOS</div>
+        <table class="services">
+          <thead><tr><th>Item</th><th>Descrição do serviço</th><th>Qtd.</th><th>Valor</th></tr></thead>
+          <tbody id="pServices"></tbody>
+        </table>
+
+        <div class="total-box"><div class="total-label">VALOR TOTAL DA PROPOSTA</div><div class="total-value" id="pTotal">R$ 0,00</div></div>
+
+        <div class="bar">CONDIÇÕES COMERCIAIS</div>
+        <table class="conditions">
+          <tr><td>Entrada para materiais</td><td id="pEntry"></td></tr>
+          <tr><td>Saldo após a entrega do serviço</td><td id="pBalance"></td></tr>
+          <tr><td>Valor total</td><td id="pTotal2"></td></tr>
+          <tr><td>Prazo estimado para execução</td><td id="pDeadline"></td></tr>
+          <tr><td>Validade da proposta</td><td id="pValidity2"></td></tr>
+        </table>
+
+        <div class="bar">OBSERVAÇÕES IMPORTANTES</div>
+        <div class="notice" id="pNotes"></div>
+
+        <div class="bar">ACEITE DA PROPOSTA</div>
+        <div class="accept">Declaro estar de acordo com o escopo, valores, forma de pagamento e demais condições apresentados nesta proposta comercial.</div>
+        <div class="signatures">
+          <div><div class="sig-line">RPG Pinturas &amp; Gesso</div><div>Data: ____/____/________</div></div>
+          <div><div class="sig-line">Cliente / Responsável</div><div>Data: ____/____/________</div></div>
+        </div>
+        <div class="quote-footer">RPG Pinturas &amp; Gesso • (11) 93024-8160 • rpgpinturas.com.br</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="mobile-dock" aria-label="Ações rápidas no celular">
+    <button type="button" class="btn btn-primary" id="mobilePreview">Ver orçamento</button>
+    <button type="button" class="btn btn-secondary" id="mobilePdf">Salvar PDF</button>
+  </div>
+
+  <script>
+    (()=>{
+      const app=document.getElementById('quoteApp');
+      const $=id=>document.getElementById(id);
+      const serviceEditor=$('serviceEditor');
+      let serviceId=0;
+      const brl=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(Number(v)||0);
+      const formatDate=value=>{if(!value)return '—';const [y,m,d]=value.split('-');return `${d}/${m}/${y}`};
+      const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      const makeProposal=()=>{const d=new Date();const p=n=>String(n).padStart(2,'0');return `RPG-${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`};
+      const today=()=>{const d=new Date();const p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
+
+      function addService(data={}){
+        const id=++serviceId;
+        const row=document.createElement('div'); row.className='service-row'; row.dataset.id=id;
+        row.innerHTML=`<div class="service-top">
+          <div class="field"><label>Serviço</label><input class="s-name" value="${esc(data.name||'')}" placeholder="Ex.: Instalação de forro em Drywall"></div>
+          <div class="field"><label>Qtd.</label><input class="s-qty" value="${esc(data.qty||'')}" placeholder="30 m²"></div>
+          <div class="field"><label>Valor R$</label><input class="s-value" type="number" inputmode="decimal" min="0" step="0.01" value="${Number(data.value)||0}"></div>
+          <div class="remove-wrap"><button type="button" class="icon-btn remove" title="Remover item">×</button></div>
+        </div>
+        <div class="field service-desc"><label>Descrição / escopo</label><textarea class="s-desc" rows="2">${esc(data.desc||'')}</textarea></div>
+        <label class="check"><input type="checkbox" class="s-included" ${data.included?'checked':''}><span>Mostrar como <b>Incluso</b> no orçamento</span></label>`;
+        row.querySelector('.remove').addEventListener('click',()=>{row.remove();updatePreview()});
+        row.querySelectorAll('input,textarea').forEach(el=>el.addEventListener('input',updatePreview));
+        row.querySelector('.s-included').addEventListener('change',updatePreview);
+        serviceEditor.appendChild(row);
+      }
+
+      function services(){return [...serviceEditor.querySelectorAll('.service-row')].map(row=>({
+        name:row.querySelector('.s-name').value.trim(), qty:row.querySelector('.s-qty').value.trim(),
+        value:Number(row.querySelector('.s-value').value)||0, desc:row.querySelector('.s-desc').value.trim(), included:row.querySelector('.s-included').checked
+      }))}
+
+      function updatePreview(){
+        $('pProposal').textContent=$('proposal').value.trim()||'—'; $('pDate').textContent=formatDate($('date').value);
+        $('pClient').textContent=$('client').value.trim()||'________________________________';
+        $('pLocation').textContent=$('location').value.trim()||'________________________________';
+        const validity=Math.max(1,Number($('validity').value)||30); $('pValidity').textContent=`${validity} dias`; $('pValidity2').textContent=`${validity} dias a partir da data de emissão`;
+        $('pDeadline').textContent=$('deadline').value.trim()||'A combinar';
+        const rows=services().filter(s=>s.name||s.desc||s.qty||s.value||s.included);
+        $('pServices').innerHTML=rows.length?rows.map((s,i)=>`<tr><td>${i+1}</td><td><div class="service-name">${esc(s.name||'Serviço')}</div>${s.desc?`<div class="service-note">${esc(s.desc)}</div>`:''}</td><td>${esc(s.qty||'—')}</td><td>${s.included?'Incluso':brl(s.value)}</td></tr>`).join(''):`<tr><td colspan="4" class="empty">Nenhum serviço informado.</td></tr>`;
+        const entry=Math.max(0,Number($('entry').value)||0), balance=Math.max(0,Number($('balance').value)||0), total=entry+balance;
+        $('pEntry').textContent=brl(entry); $('pBalance').textContent=brl(balance); $('pTotal').textContent=brl(total); $('pTotal2').textContent=brl(total);
+        const notes=[];
+        if($('clientMaterials').checked){notes.push('<p><b>Materiais de responsabilidade do cliente:</b> massa corrida e tinta.</p>');notes.push('<p>Os demais serviços e materiais necessários para a execução do escopo descrito nesta proposta estão inclusos, <b>exceto massa corrida e tinta</b>.</p>')}
+        const extra=$('extraNotes').value.trim(); if(extra)notes.push(`<p>${esc(extra)}</p>`);
+        notes.push('<p>Eventuais serviços adicionais ou alterações de escopo deverão ser previamente alinhados e poderão ser objeto de orçamento complementar.</p>');
+        $('pNotes').innerHTML=notes.join('');
+      }
+
+      function example(){
+        serviceEditor.innerHTML=''; serviceId=0;
+        addService({name:'Instalação de forro em Drywall',qty:'30 m²',value:3900,desc:'Execução com estrutura metálica, placas, fita e parafusos, conforme área informada.'});
+        addService({name:'Amaciamento e pintura do forro',qty:'Incluso',value:0,desc:'Aplicação de massa, acabamento liso e 2 demãos de tinta.',included:true});
+        addService({name:'Pintura externa',qty:'Incluso',value:0,desc:'Preparação da superfície e acabamento final.',included:true});
+        $('entry').value='1900';$('balance').value='2000';$('deadline').value='A combinar';$('validity').value='30';$('clientMaterials').checked=true;updatePreview();
+      }
+      function reset(){
+        $('proposal').value=makeProposal();$('date').value=today();$('validity').value='30';$('deadline').value='A combinar';$('client').value='';$('location').value='';$('entry').value='0';$('balance').value='0';$('extraNotes').value='';$('clientMaterials').checked=false;serviceEditor.innerHTML='';serviceId=0;addService();updatePreview();$('status').textContent='Novo orçamento iniciado.';
+      }
+      function printQuote(){
+        updatePreview();
+        $('status').textContent='Na próxima tela, escolha “Salvar como PDF” ou a opção de impressão do celular.';
+        setTimeout(()=>window.print(),80);
+      }
+
+      function addPresetService(){
+        const name=$('servicePreset').value;
+        if(!name)return;
+        const presets={
+          'Pintura residencial':'Preparação da superfície e pintura residencial conforme escopo da visita.',
+          'Pintura comercial':'Preparação da superfície e pintura de ambiente comercial conforme escopo da visita.',
+          'Pintura interna':'Preparação das superfícies e pintura interna com acabamento final.',
+          'Pintura externa':'Preparação da superfície e execução da pintura externa.',
+          'Instalação de forro em Drywall':'Execução com estrutura metálica, placas, fita e parafusos.',
+          'Divisória em Drywall':'Montagem de estrutura, placas e tratamento das juntas.',
+          'Forro de gesso':'Execução de forro em gesso conforme medidas e condições da obra.',
+          'Sanca de gesso':'Execução de sanca de gesso conforme modelo e medidas definidas.',
+          'Textura':'Preparação e aplicação de textura conforme acabamento escolhido.',
+          'Grafiato':'Preparação e aplicação de grafiato conforme acabamento escolhido.',
+          'Preparação / massa corrida':'Preparação da superfície, correções e aplicação de massa corrida.',
+          'Outro':''
+        };
+        addService({name,desc:presets[name]||''});
+        $('servicePreset').value='';
+        updatePreview();
+        const rows=serviceEditor.querySelectorAll('.service-row');
+        const last=rows[rows.length-1];
+        if(last)last.querySelector('.s-qty')?.focus();
+      }
+
+      function shareSummary(){
+        updatePreview();
+        const client=$('client').value.trim()||'Cliente';
+        const total=Math.max(0,Number($('entry').value)||0)+Math.max(0,Number($('balance').value)||0);
+        const text=`RPG Pinturas & Gesso\nProposta: ${$('proposal').value}\nCliente: ${client}\nValor total: ${brl(total)}\nEntrada: ${brl($('entry').value)}\nSaldo final: ${brl($('balance').value)}\n\nSalve o PDF completo pelo botão “Salvar PDF”.`;
+        if(navigator.share){
+          navigator.share({title:'Orçamento RPG Pinturas & Gesso',text}).catch(()=>{});
+        }else{
+          $('status').textContent='Compartilhamento direto não disponível neste navegador. Use “Salvar PDF” e envie o arquivo pelo WhatsApp.';
+        }
+      }
+
+      $('addService').addEventListener('click',()=>addService());
+      $('addPreset').addEventListener('click',addPresetService);
+      $('servicePreset').addEventListener('change',()=>{ if($('servicePreset').value) addPresetService(); });
+      $('generate').addEventListener('click',()=>{updatePreview();$('status').textContent='Orçamento atualizado na prévia.';document.getElementById('paper').scrollIntoView({behavior:'smooth',block:'start'})});
+      $('printBtn').addEventListener('click',printQuote);$('printTop').addEventListener('click',printQuote);$('mobilePdf').addEventListener('click',printQuote);
+      $('mobilePreview').addEventListener('click',()=>{updatePreview();document.getElementById('paper').scrollIntoView({behavior:'smooth',block:'start'})});
+      $('shareBtn').addEventListener('click',shareSummary);
+      $('newQuote').addEventListener('click',reset);$('fillExample').addEventListener('click',example);
+      ['proposal','date','validity','deadline','client','location','entry','balance','extraNotes'].forEach(id=>$(id).addEventListener('input',updatePreview));$('clientMaterials').addEventListener('change',updatePreview);
+      $('proposal').value=makeProposal();$('date').value=today();example();updatePreview();
+    })();
+  </script>
+</body>
+</html>

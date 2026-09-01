@@ -17,3 +17,13 @@ Substitua os arquivos do repositório `rpg-pinturas` pelo conteúdo desta pasta,
 
 ## Próximo passo recomendado
 Após publicar, cadastrar `https://rpgpinturas.com.br/sitemap.xml` no Google Search Console e criar/otimizar o Perfil da Empresa no Google com as áreas realmente atendidas.
+
+
+## Melhorias para uso no celular
+- Formulário responsivo com campos grandes para toque.
+- Teclado numérico em valores.
+- Lista rápida de serviços pré-cadastrados.
+- Barra inferior no celular com "Ver orçamento" e "Salvar PDF".
+- Prévia do orçamento adaptada à largura do celular.
+- Botão "Compartilhar resumo" usando o compartilhamento nativo do aparelho quando disponível.
+- Ao tocar em "Salvar PDF", use a opção "Salvar como PDF" / impressão do navegador e depois encaminhe o arquivo pelo WhatsApp.
