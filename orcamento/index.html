@@ -268,7 +268,7 @@
       $('shareBtn').addEventListener('click',shareSummary);
       $('newQuote').addEventListener('click',reset);$('fillExample').addEventListener('click',example);
       ['proposal','date','validity','deadline','client','location','entry','balance','extraNotes'].forEach(id=>$(id).addEventListener('input',updatePreview));$('clientMaterials').addEventListener('change',updatePreview);
-      $('proposal').value=makeProposal();$('date').value=today();example();updatePreview();
+      reset();$('status').textContent='Preencha os dados para criar um novo orçamento.';
     })();
   </script>
 </body>

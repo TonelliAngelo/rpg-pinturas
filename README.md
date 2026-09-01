@@ -27,3 +27,9 @@ Após publicar, cadastrar `https://rpgpinturas.com.br/sitemap.xml` no Google Sea
 - Prévia do orçamento adaptada à largura do celular.
 - Botão "Compartilhar resumo" usando o compartilhamento nativo do aparelho quando disponível.
 - Ao tocar em "Salvar PDF", use a opção "Salvar como PDF" / impressão do navegador e depois encaminhe o arquivo pelo WhatsApp.
+
+
+## Inicialização do gerador
+A página `/orcamento/` agora sempre abre com um orçamento novo e em branco.
+Nenhum orçamento anterior é carregado automaticamente e nenhum dado de orçamento é armazenado no navegador.
+O botão "Carregar exemplo" permanece apenas como referência opcional.
