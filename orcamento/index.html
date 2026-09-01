@@ -31,7 +31,13 @@
     .mobile-dock{display:none}
     @page{size:A4;margin:0}
     @media print{
-      body{background:#fff}.app{display:block;width:auto;margin:0}.panel,.paper-actions,.mobile-dock{display:none!important}.paper-wrap{overflow:visible}.paper{box-shadow:none;border:0;border-radius:0;width:210mm;min-height:297mm;margin:0;padding:11mm 12mm 9mm;page-break-after:avoid}.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}.services th,.total-box,.notice,.meta .label,.conditions td:first-child{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      html,body{margin:0!important;padding:0!important;background:#fff!important}
+      body *{visibility:hidden!important}
+      .paper-wrap,.paper-wrap *{visibility:visible!important}
+      .paper-wrap{position:absolute;left:0;top:0;width:100%;margin:0!important;padding:0!important;overflow:visible!important}
+      .paper-actions,.mobile-dock{display:none!important}
+      .paper{box-sizing:border-box;box-shadow:none!important;border:0!important;border-radius:0!important;width:210mm!important;min-height:0!important;height:auto!important;margin:0!important;padding:10mm 12mm 8mm!important;overflow:visible!important;break-after:auto!important;page-break-after:auto!important}
+      .bar,.services th,.total-box,.notice,.meta .label,.conditions td:first-child{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     }
   </style>
 </head>
@@ -227,8 +233,14 @@
       }
       function printQuote(){
         updatePreview();
-        $('status').textContent='Na próxima tela, escolha “Salvar como PDF” ou a opção de impressão do celular.';
-        setTimeout(()=>window.print(),80);
+        const filled=services().filter(s=>s.name||s.desc||s.qty||s.value||s.included);
+        const total=filled.reduce((sum,s)=>sum+(s.included?0:Math.max(0,Number(s.value)||0)),0);
+        if(!filled.length || total<=0){
+          $('status').textContent='Informe pelo menos um serviço com valor antes de gerar o PDF.';
+          return;
+        }
+        $('status').textContent='Abrindo a prévia. Escolha “Salvar como PDF” no celular ou computador.';
+        requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));
       }
 
       function addPresetService(){

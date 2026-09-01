@@ -46,3 +46,9 @@ O botão "Carregar exemplo" permanece apenas como referência opcional.
 ## Ajuste de nomenclatura
 O campo anteriormente chamado "Entrada para materiais" passou a ser exibido apenas como "Entrada".
 Caso seja necessário indicar a finalidade da entrada, essa informação pode ser registrada no campo de observações.
+
+## Correção de PDF
+- Corrigida a geração que podia criar uma folha em branco.
+- Na impressão/PDF, somente a proposta é exibida.
+- Removida a altura mínima forçada de uma página A4 durante a impressão.
+- Antes de gerar o PDF, o sistema valida se existe pelo menos um serviço com valor.
