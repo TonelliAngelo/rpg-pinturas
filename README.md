@@ -57,3 +57,9 @@ Caso seja necessário indicar a finalidade da entrada, essa informação pode se
 ## CNPJ e PIX
 - CNPJ da empresa incluído no orçamento: 34.483.250/0001-41
 - Chave PIX incluída nas condições de pagamento: rogeriorosendo583@gmail.com
+
+
+## QR Code PIX
+- O orçamento impresso/PDF agora exibe a chave PIX e um QR Code.
+- O QR Code contém a chave PIX: rogeriorosendo583@gmail.com
+- Como a chave é fixa, o QR Code é um arquivo local do próprio site e funciona sem depender de serviços externos.
