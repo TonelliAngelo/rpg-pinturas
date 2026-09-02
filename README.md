@@ -52,3 +52,8 @@ Caso seja necessário indicar a finalidade da entrada, essa informação pode se
 - Na impressão/PDF, somente a proposta é exibida.
 - Removida a altura mínima forçada de uma página A4 durante a impressão.
 - Antes de gerar o PDF, o sistema valida se existe pelo menos um serviço com valor.
+
+
+## CNPJ e PIX
+- CNPJ da empresa incluído no orçamento: 34.483.250/0001-41
+- Chave PIX incluída nas condições de pagamento: rogeriorosendo583@gmail.com

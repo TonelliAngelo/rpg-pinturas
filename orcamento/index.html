@@ -115,7 +115,7 @@
           <img src="logo-rpg.png" class="quote-logo" alt="Logo RPG Pinturas & Gesso">
           <div>
             <div class="quote-title">PROPOSTA COMERCIAL / ORÇAMENTO</div>
-            <div class="quote-company"><b>RPG Pinturas &amp; Gesso</b><br>Pintura • Gesso • Drywall • Texturas • Acabamentos<br><b>WhatsApp:</b> (11) 93024-8160 &nbsp; <b>Site:</b> rpgpinturas.com.br<br><b>Atendimento:</b> Jandira e região - SP</div>
+            <div class="quote-company"><b>RPG Pinturas &amp; Gesso</b><br>Pintura • Gesso • Drywall • Texturas • Acabamentos<br><b>CNPJ:</b> 34.483.250/0001-41<br><b>WhatsApp:</b> (11) 93024-8160 &nbsp; <b>Site:</b> rpgpinturas.com.br<br><b>Atendimento:</b> Jandira e região - SP</div>
           </div>
         </header>
 
@@ -136,6 +136,7 @@
         <div class="bar">CONDIÇÕES COMERCIAIS</div>
         <table class="conditions">
           <tr><td>Entrada</td><td id="pEntry"></td></tr>
+          <tr><td>Chave PIX para pagamento</td><td>rogeriorosendo583@gmail.com</td></tr>
           <tr><td>Saldo após a entrega do serviço</td><td id="pBalance"></td></tr>
           <tr><td>Valor total</td><td id="pTotal2"></td></tr>
           <tr><td>Prazo estimado para execução</td><td id="pDeadline"></td></tr>
@@ -272,7 +273,7 @@
         updatePreview();
         const client=$('client').value.trim()||'Cliente';
         const {serviceTotal:total,entry,balance}=recalcFinancials();
-        const text=`RPG Pinturas & Gesso\nProposta: ${$('proposal').value}\nCliente: ${client}\nValor total: ${brl(total)}\nEntrada: ${brl(entry)}\nSaldo final: ${brl(balance)}\n\nSalve o PDF completo pelo botão “Salvar PDF”.`;
+        const text=`RPG Pinturas & Gesso\nCNPJ: 34.483.250/0001-41\nProposta: ${$('proposal').value}\nCliente: ${client}\nValor total: ${brl(total)}\nEntrada: ${brl(entry)}\nSaldo final: ${brl(balance)}\nPIX: rogeriorosendo583@gmail.com\n\nSalve o PDF completo pelo botão “Salvar PDF”.`;
         if(navigator.share){
           navigator.share({title:'Orçamento RPG Pinturas & Gesso',text}).catch(()=>{});
         }else{
