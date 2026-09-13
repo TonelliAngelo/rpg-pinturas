@@ -63,3 +63,11 @@ Caso seja necessário indicar a finalidade da entrada, essa informação pode se
 - O orçamento impresso/PDF agora exibe a chave PIX e um QR Code.
 - O QR Code contém a chave PIX: rogeriorosendo583@gmail.com
 - Como a chave é fixa, o QR Code é um arquivo local do próprio site e funciona sem depender de serviços externos.
+
+
+## Atualização Fase 3
+- Portfólio com fotos reais da RPG
+- Imagens WebP otimizadas
+- GA4 nas páginas locais
+- Eventos `whatsapp_click` e `generate_lead`
+- Bloco Durante → Resultado

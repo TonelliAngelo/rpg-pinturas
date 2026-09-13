@@ -1,3 +1,16 @@
+
+// Conversões GA4: cliques no WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'whatsapp_click', {
+        event_category: 'lead',
+        event_label: link.dataset.whatsapp || window.location.pathname
+      });
+    }
+  });
+});
+
 const header = document.querySelector('.site-header');
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
@@ -43,6 +56,12 @@ const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
   quoteForm.addEventListener('submit', e => {
     e.preventDefault();
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        event_category: 'lead',
+        event_label: 'orcamento_site'
+      });
+    }
     const room = document.getElementById('room')?.value || 'Não informado';
     const city = document.getElementById('city')?.value || 'Não informado';
     const notes = document.getElementById('notes')?.value || 'Sem observações';
