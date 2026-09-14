@@ -71,3 +71,12 @@ Caso seja necessário indicar a finalidade da entrada, essa informação pode se
 - GA4 nas páginas locais
 - Eventos `whatsapp_click` e `generate_lead`
 - Bloco Durante → Resultado
+
+
+## Fase 2 - SEO local avançado
+- Conteúdo exclusivo para Jandira, Barueri, Carapicuíba, Osasco e Cotia
+- FAQ visível + FAQPage JSON-LD em cada página local
+- Service schema por cidade
+- CTAs de WhatsApp identificados para GA4
+- Links internos com texto descritivo
+- Sitemap atualizado com lastmod 2026-09-13
