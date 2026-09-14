@@ -1,0 +1,8 @@
+FASE 2.5 - CORRECAO DE CLS
+- CSS principal volta a carregar como stylesheet normal para impedir FOUC/layout shift.
+- Removido critical CSS incompatível com a home.
+- width/height intrínsecos adicionados às imagens locais.
+- espaço da imagem hero reservado por aspect-ratio.
+- imagens responsivas preservadas.
+- GA4 e eventos mantidos.
+Meta: CLS <= 0.10 e recuperar score mobile.
