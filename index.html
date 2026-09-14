@@ -25,18 +25,15 @@
   <meta property="og:image" content="https://rpgpinturas.com.br/images/portfolio/sanca-iluminacao-rpg.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="images/favicon-rpg.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"></noscript></noscript>
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/style.css"></noscript>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"HomeAndConstructionBusiness",
     "name":"RPG Pinturas & Gesso",
     "url":"https://rpgpinturas.com.br/",
-    "image":"https://rpgpinturas.com.br/images/logo-rpg.webp",
+    "image":"https://rpgpinturas.com.br/images/logo-rpg.png",
     "telephone":"+55 11 93024-8160",
     "priceRange":"$$",
     "areaServed":[
@@ -49,11 +46,30 @@
     "serviceType":["Pintura residencial","Pintura comercial","Gesso","Drywall","Texturas","Grafiato","Sancas"]
   }
   </script>
+<!--critical-inline-->
+<style>
+html{background:#111317}
+body{margin:0;background:#111317;color:#fff;font-family:Manrope,Arial,sans-serif}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(17,19,23,.96)}
+.container{width:min(1120px,calc(100% - 32px));margin:0 auto}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:16px}
+.brand-logo{display:block;width:133px;height:auto}
+.section-dark{background:#111317;color:#fff}
+.local-hero{padding:56px 0 64px}
+.local-page-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.local-page-hero h1{font-family:Montserrat,Arial,sans-serif;font-size:clamp(2.2rem,5vw,4.3rem);line-height:.98;margin:14px 0 18px}
+.local-page-hero p{max-width:680px;line-height:1.65;color:#d5d7dc}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:12px;font-weight:800}
+.btn-primary{background:#ff6b1a;color:#fff;padding:14px 20px}
+.hero-photo img{width:100%;height:auto;display:block}
+@media(max-width:900px){.local-page-grid{grid-template-columns:1fr}.local-hero{padding-top:34px}.hero-visual{order:2}}
+</style>
 </head>
 <body>
   <header class="site-header" id="topo">
     <div class="container nav-wrap">
-      <a class="brand" href="#topo" aria-label="RPG Pinturas e Gesso - início"><img class="brand-logo" src="images/logo-rpg.webp" alt="RPG Pinturas e Gesso" width="360" height="240" decoding="async" /></a>
+      <a class="brand" href="#topo" aria-label="RPG Pinturas e Gesso - início"><img class="brand-logo" width="133" height="89" src="images/logo-rpg-small.webp" alt="RPG Pinturas e Gesso" /></a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#regiao">Região</a><a href="#diferenciais">Diferenciais</a><a href="#orcamento">Orçamento</a>
@@ -78,7 +94,7 @@
         </div>
         <div class="hero-visual reveal">
           <div class="photo-card photo-main hero-photo" role="img" aria-label="Profissional realizando pintura interna">
-            <img src="images/portfolio/sanca-iluminacao-rpg.webp" alt="Sanca em gesso com iluminação e acabamento realizado pela RPG Pinturas & Gesso" loading="eager" fetchpriority="high" /><span class="photo-label">TRABALHO REAL RPG</span><span class="photo-source">Portfólio RPG</span>
+            <img src="images/portfolio/sanca-iluminacao-rpg-640.webp" srcset="images/portfolio/sanca-iluminacao-rpg-640.webp 640w, images/portfolio/sanca-iluminacao-rpg.webp 1280w" sizes="(max-width: 700px) 100vw, 55vw" alt="Sanca em gesso com iluminação e acabamento realizado pela RPG Pinturas & Gesso" loading="eager" fetchpriority="high" /><span class="photo-label">TRABALHO REAL RPG</span><span class="photo-source">Portfólio RPG</span>
           </div>
           <div class="floating-badge"><strong>RPG</strong><span>Atendimento em Jandira e cidades próximas</span></div>
         </div>
@@ -107,7 +123,7 @@
 
       <div class="portfolio-grid portfolio-grid-real">
         <figure class="portfolio-card wide reveal" data-lightbox>
-          <div class="portfolio-image-wrap"><img class="portfolio-image" src="images/portfolio/sanca-iluminacao-rpg.webp" alt="Sanca em gesso com iluminação e acabamento realizado pela RPG" loading="lazy" decoding="async" /><span class="portfolio-tag">GESSO + ILUMINAÇÃO</span><span class="zoom-hint">Ampliar ↗</span></div>
+          <div class="portfolio-image-wrap"><img class="portfolio-image" src="images/portfolio/sanca-iluminacao-rpg-640.webp" srcset="images/portfolio/sanca-iluminacao-rpg-640.webp 640w, images/portfolio/sanca-iluminacao-rpg.webp 1280w" sizes="(max-width: 700px) 100vw, 55vw" alt="Sanca em gesso com iluminação e acabamento realizado pela RPG" loading="lazy" decoding="async" /><span class="portfolio-tag">GESSO + ILUMINAÇÃO</span><span class="zoom-hint">Ampliar ↗</span></div>
           <figcaption><strong>Sanca e iluminação</strong><span>Acabamento de teto com gesso e iluminação embutida.</span></figcaption>
         </figure>
         <figure class="portfolio-card reveal" data-lightbox>
@@ -184,7 +200,7 @@
     <section class="cta-band"><div class="container cta-grid"><div><span class="eyebrow">Pronto para começar?</span><h2>Transforme seu ambiente com a RPG.</h2></div><a class="btn btn-light btn-lg" target="_blank" rel="noopener" href="https://wa.me/5511930248160?text=Olá%20Rogério!%20Gostaria%20de%20falar%20sobre%20um%20serviço.">Falar agora no WhatsApp</a></div></section>
   </main>
 
-  <footer><div class="container footer-grid"><a class="brand footer-brand" href="#topo"><img class="brand-logo footer-logo" src="images/logo-rpg.webp" alt="RPG Pinturas e Gesso" width="360" height="240" loading="lazy" decoding="async" /></a><p>Jandira · Barueri · Carapicuíba · Osasco · Cotia · SP<br>Pintura · Gesso · Drywall · Acabamentos</p><p class="footer-right">© 2026 RPG Rogério Pintura e Gesso<br><a href="#topo">Voltar ao topo ↑</a></p></div></footer>
+  <footer><div class="container footer-grid"><a class="brand footer-brand" href="#topo"><img class="brand-logo footer-logo" src="images/logo-rpg-small.webp" alt="RPG Pinturas e Gesso" /></a><p>Jandira · Barueri · Carapicuíba · Osasco · Cotia · SP<br>Pintura · Gesso · Drywall · Acabamentos</p><p class="footer-right">© 2026 RPG Rogério Pintura e Gesso<br><a href="#topo">Voltar ao topo ↑</a></p></div></footer>
   <div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Fechar imagem">×</button><img id="lightboxImage" src="" alt="Imagem ampliada do portfólio" /><p id="lightboxCaption"></p></div>
   <a class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" href="https://wa.me/5511930248160?text=Olá%20Rogério!%20Vim%20pelo%20site%20da%20RPG.">💬</a>
   <script src="js/main.js" defer></script>

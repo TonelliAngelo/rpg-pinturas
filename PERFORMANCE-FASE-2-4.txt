@@ -1,0 +1,16 @@
+RPG Pinturas & Gesso — Fase 2.4 Performance
+
+Ajustes aplicados:
+- Logo reduzido para versão WebP menor.
+- Imagem sanca/hero com versão responsiva 640px.
+- CSS principal minificado.
+- CSS crítico da primeira dobra inline.
+- CSS completo carregado de forma não bloqueante.
+- Google Fonts carregadas de forma não bloqueante.
+- Preconnects não utilizados removidos.
+- JavaScript local com defer.
+- GA4 preservado.
+- Eventos de WhatsApp preservados.
+
+Objetivo:
+Reduzir atraso de renderização do H1/LCP e elevar o desempenho mobile sem alterar o layout visual.
