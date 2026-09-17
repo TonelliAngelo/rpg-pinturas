@@ -12,3 +12,30 @@ img{max-width:100%;height:auto}.hero-photo{aspect-ratio:640/506;overflow:hidden}
 .commercial-actions{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
 .commercial-secondary{background:#fff;border:1px solid var(--line);color:#1b2028}
 @media(max-width:600px){.commercial-banner{border-radius:18px;margin-top:22px}.commercial-actions{display:grid;grid-template-columns:1fr}.commercial-actions .btn{width:100%}}
+
+
+/* MOBILE CENTRALIZATION FIX */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.hero-grid,.hero-copy,.hero-visual,.section-heading,.quote-grid>*,.split-grid>*,.cta-grid>*,.footer-grid>*{min-width:0}
+@media(max-width:600px){
+ .container{width:100%;max-width:100%;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}
+ .hero{width:100%;padding:112px 0 58px;overflow:hidden}
+ .hero-grid{display:block;width:100%}
+ .hero-copy{width:100%;max-width:100%}
+ .hero .eyebrow{display:block;max-width:100%;font-size:11px;line-height:1.55;letter-spacing:.10em;overflow-wrap:anywhere}
+ .hero h1{width:100%;max-width:100%;font-size:clamp(38px,11.2vw,48px);line-height:1.04;letter-spacing:-.045em;word-break:normal;overflow-wrap:normal;margin-bottom:22px}
+ .hero-copy>p{width:100%;max-width:100%;font-size:17px;line-height:1.7;overflow-wrap:break-word}
+ .hero-actions{width:100%;display:grid;grid-template-columns:1fr;gap:12px;margin:28px 0}
+ .hero-actions .btn{width:100%;max-width:100%;min-height:58px;white-space:normal;text-align:center}
+ .hero-visual,.photo-card{width:100%;max-width:100%}
+ .hero-visual{margin-top:38px}
+ .floating-badge{max-width:calc(100% - 30px)}
+ .section-heading h2,.split-grid h2,.quote-copy h2{font-size:clamp(30px,9vw,40px);overflow-wrap:break-word}
+ .commercial-banner{width:100%;max-width:100%;border-radius:16px}
+ .rpg-carousel-section .container{padding-left:14px;padding-right:14px}
+ .rpg-carousel{width:100%;max-width:100%}
+ .rpg-car-head{padding:0 6px}
+ .rpg-car-head h2{font-size:clamp(28px,8vw,36px);line-height:1.12}
+ .rpg-car-cta .btn{width:100%;white-space:normal}
+ .whatsapp-float{right:16px;bottom:18px}
+}
