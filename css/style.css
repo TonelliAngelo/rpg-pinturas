@@ -39,3 +39,6 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  .rpg-car-cta .btn{width:100%;white-space:normal}
  .whatsapp-float{right:16px;bottom:18px}
 }
+
+.conversion-trust{display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 24px;color:#d8dbe1;font-size:.92rem}
+@media(max-width:600px){.conversion-trust{display:grid;grid-template-columns:1fr;gap:8px}}

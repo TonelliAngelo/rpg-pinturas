@@ -1,0 +1,6 @@
+Pacote de crescimento RPG
+Eventos GA4 adicionados: whatsapp_click, phone_click, carousel_click, carousel_view, portfolio_view, quote_start, quote_form_start, quote_submit e scroll_depth.
+Dados estruturados de negócio local adicionados.
+Novas páginas: pintura, gesso, drywall, grafiato/texturas e sancas.
+Sitemap atualizado.
+Após publicação: validar eventos no GA4 e solicitar indexação das novas URLs no Search Console.

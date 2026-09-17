@@ -36,4 +36,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+<url><loc>https://rpgpinturas.com.br/servicos/pintura.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://rpgpinturas.com.br/servicos/gesso.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://rpgpinturas.com.br/servicos/drywall.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://rpgpinturas.com.br/servicos/grafiato.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://rpgpinturas.com.br/servicos/sancas.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
